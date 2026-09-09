@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Parquimetro</title>
+</head>
+<body>
+    <header>
+    <div>
+    <h1>Parquimetro Digital</h1>
+    </div>
+    </header>
+    <h1>Por favor digite quanto quer depositar</h1>
+    <h2>R$ 1,00 é 30 minutos</h2>
+    <h2>R$ 1,75 é 60 minutos</h2>
+    <h2>R$ 3,00 é 120 minutos</h2>
+    <div>
+        <input type="number" id="deposito" placeholder="Digite quanto quer depositar"><br><br>
+        <button onclick="parquimetro.depositar()">Depositar</button><br><br>
+        <h3 id="saldo"></h3>
+        <h3 id="troco"></h3>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
