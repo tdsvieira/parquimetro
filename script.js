@@ -10,6 +10,7 @@ class Conta {
     sacar(valor) {
         this.#saldo -= valor;
     }
+
     get saldo() {
         return this.#saldo
     }
@@ -23,6 +24,10 @@ class Parquimetro {
     }
     depositar() {
         const depositoDinheiro = parseFloat(document.getElementById('deposito').value);
+        if(isNaN(depositoDinheiro) || depositoDinheiro <= 0){
+            alert("Tem que ser um valor valido, por favor digite um valor valido");
+            return;
+        }
         this.deposito.depositar(depositoDinheiro);
         this.mostrarValorDepositado(this.deposito.saldo);
         this.troco();
@@ -56,6 +61,7 @@ class Parquimetro {
         const trocoCalculado = saldoAtual - tarifaCobrada;
 
         document.getElementById('troco').textContent = `Seu troco é de R$ ${trocoCalculado.toFixed(2)}`;
+        this.deposito.sacar(saldoAtual)
     }
 }
 const conta = new Conta();
